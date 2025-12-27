@@ -3,46 +3,191 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>關於 Apink Panda 粉絲自製網站</title>
+  <title>Apink Panda 粉絲自製網站</title>
   <meta name="description" content="Apink 粉絲自製網站，收錄與 Apink 相關的程式工具與資料。">
   <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans CJK TC', 'Helvetica Neue', Arial, sans-serif; max-width: 900px; margin: 40px auto; line-height: 1.6; padding: 0 20px; color: #222; }
-    h1, h2 { color: #222; }
-    ul { margin-left: 1.2rem; }
-    footer { margin-top: 2rem; color: #666; font-size: 0.9rem; }
-    hr { border: none; border-top: 1px solid #eee; margin: 1.5rem 0; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans CJK TC', 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; color: #222; background: #f9f9f9; }
+    
+    /* 導覽列 */
+    .navbar {
+      background: linear-gradient(135deg, #F88192 0%, #E85878 100%);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .navbar-brand {
+      color: white;
+      font-size: 1.3rem;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .navbar-nav {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .navbar-nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+    .navbar-nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* 主要內容區 */
+    .main-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    /* 標題列 */
+    .header-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+    .header-section h1 {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    /* 按鈕群組 */
+    .button-group {
+      display: flex;
+      gap: 1rem;
+    }
+    .btn {
+      padding: 0.7rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+    }
+    .btn-green {
+      background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+    }
+    .btn-purple {
+      background: linear-gradient(135deg, #9C27B0 0%, #7B1FA2 100%);
+    }
+    .btn-pink {
+      background: linear-gradient(135deg, #F88192 0%, #E85878 100%);
+    }
+    .btn:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+
+    /* 專輯網格 */
+    .album-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .album-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .album-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    }
+    .album-cover {
+      width: 100%;
+      aspect-ratio: 6 / 4;
+      background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+    }
+    .album-info {
+      padding: 1rem;
+    }
+    .album-title {
+      font-weight: bold;
+      margin-bottom: 0.3rem;
+    }
+    .album-artist {
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    /* 空狀態 */
+    .empty-state {
+      text-align: center;
+      padding: 4rem 2rem;
+      color: #666;
+    }
+    .empty-state-icon {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+    }
+
+    /* 頁尾 */
+    footer {
+      background: #f5f5f5;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 3rem;
+      color: #666;
+      font-size: 0.9rem;
+    }
   </style>
 </head>
 <body>
-  <h1>關於 Apink Panda 粉絲自製網站</h1>
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">Apink Panda</a>
+    <ul class="navbar-nav">
+      <li><a href="index.html">首頁</a></li>
+      <li><a href="about.html">關於</a></li>
+    </ul>
+  </nav>
 
-  <p>Apink（에이핑크）是韓國知名女子團體，於 2011 年出道，至今已經是 14 年的長壽團體。</p>
+  <div class="main-content">
+    <div class="header-section">
+      <h1>Apink 粉絲遊戲工具</h1>
+    </div>
 
-  <p>本網站收錄了與Apink相關的程式工具開發。讓粉絲們能夠欣賞她們優秀的音樂作品並且更深入地理解她們的音樂。</p>
+    <div class="album-grid">
+      <a href="https://apink-panda.com/solution_card/" style="text-decoration: none; color: inherit;">
+        <div class="album-card">
+          <div class="album-cover" style="background: url('https://apink-panda.com/solution_book.png') center/cover no-repeat;"></div>
+          <div class="album-info">
+            <div class="album-title">2026 年曆解答卡遊戲</div>
+            <div class="album-artist">Season Greeting - Panda版本</div>
+          </div>
+        </div>
+      </a>
 
-  <h2>Apink 現任成員</h2>
-  <ul>
-    <li>朴初瓏🐰 (박초롱 Park Chorong) - 隊長、副唱</li>
-    <li>尹普美🐥 (윤보미 Yoon Bomi) - 領唱、主舞</li>
-    <li>鄭恩地🐶 (정은지 Jung Eunji) - 主唱</li>
-    <li>金南珠💜 (김남주 Kim Namjoo) - 領唱、主舞</li>
-    <li>吳夏榮🍞 (오하영 Oh Hayoung) - 副唱、忙內</li>
-  </ul>
-
-  <h2>已離隊成員</h2>
-  <ul>
-    <li>孫娜恩 (손나은 Son Na Eun)</li>
-    <li>洪瑜暻 (홍유경 Hong Yu Kyung)</li>
-  </ul>
-
-  <hr>
-
-  <p>本網站為粉絲🐼自製網站，旨在推廣 Apink 的音樂作品。</p>
-
-  <p>版權歸原創作公司及藝人所有，若侵犯權益，請聯繫我們．將會立即刪除相關內容。</p>
+      <a href="https://apink-panda.com/panda_player/" style="text-decoration: none; color: inherit;">
+        <div class="album-card">
+          <div class="album-cover" style="background: url('https://apink-panda.com/panda_player.png') center/cover no-repeat;"></div>
+          <div class="album-info">
+            <div class="album-title">粉熊回歸劇透播放器</div>
+            <div class="album-artist">Panda Player</div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
 
   <footer>
-    <p>謝謝您的造訪 — Apink Panda 粉絲站</p>
+    <p>© 2025 Apink Panda 粉絲自製網站 - 為粉紅熊貓而生</p>
   </footer>
 </body>
 </html>
